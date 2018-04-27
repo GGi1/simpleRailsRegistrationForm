@@ -1,0 +1,11 @@
+<h1>Thank you <%= params[:fname] %>! </h1>
+<p>User input recieved for user <%= params[:un] %> </p>
+
+
+
+
+<%= form_with url: "/user/confirmation", method: :post, local: true do |f| %>
+<%= f.text_field :un, id: :un, param_key: :un, :value => params[:un]%>
+<%= f.password_field :pw, id: :pw, :placeholder => "Password"%>
+<%= submit_tag "Log In"%>
+<% end %>
