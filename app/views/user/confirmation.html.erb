@@ -2,7 +2,26 @@
 <p>User input recieved, confirmation page</p>
  <%= params[:un] %>
   <%= params[:lname] %>
-   <%= params[:city] %>
+   <%= params[:city] %><br />
+
+Read all files: <%=@readallfile%><br />
+Read all files class: <%=@readallfile.class%><br />
+Read all files split:<%=@newthing = @readallfile.split(",")%><br />
+Read all files[0]]:<%=@newthing[0]%><br />
+
+@userName =  <%= @userName %> <br />
+
+@paramsName = <%=params[:un]%> <br />
+@userName class =  <%= @userName.class %> <br />
+
+@paramsName class = <%=params[:un].class%> <br />
+@userPass =  <%= @userPass%> <br />
+
+@paramspass = <%=params[:pw]%><br />
+@userPass class=  <%= @userPass.class%> <br />
+
+@paramsName class= <%=params[:pw].class%><br />
+
 
 
 <%= form_with url: "/user/confirmation", method: :post, local: true do |f| %>
