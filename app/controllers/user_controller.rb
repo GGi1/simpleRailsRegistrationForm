@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-
   # def user
   # end
   #
@@ -37,11 +36,9 @@ class UserController < ApplicationController
     # else
     #   flash.now[:alert] = "Your credentails are not valid"
     # end
-
     #-----------------------------------------------------------------------------------------
     # file = File.open("users.txt", "r")
     #READS ENITRE FILE:
-
     @readallfile = File.read("users.txt")
 
     @userArray = @readallfile.split(",")
@@ -49,7 +46,12 @@ class UserController < ApplicationController
     @userPass = @userArray[1]
     # if @userName == params[:un] && @userPass == params[:pw]
         if @userPass == params[:pw]
+        #Send flash notice
         flash.now[:notice] = "You're A FUCKING BOSS (aka credentials are valid)"
+        #
+        file = File.new("users.txt", "w+")
+        file.write("#{@user.un},#{@user.pw},#{@user.fname},#{@user.lname},")
+        file.close
         render('/home/homepage')
       else
       flash.now[:alert] = "Your credentails are not valid. '#{@userPass}' (userPass) !=  '#{params[:pw]}' (params[:pw])"
