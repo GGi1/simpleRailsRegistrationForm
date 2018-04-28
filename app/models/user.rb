@@ -20,8 +20,6 @@ def self.get_count
   @@count
 end
 #the User.get_count should return the number of created users
-# def model_name
-#   @un = un
-# end
+
 
 end

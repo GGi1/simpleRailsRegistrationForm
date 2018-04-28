@@ -1,9 +1,6 @@
 <h1>Thank you <%= params[:fname] %>! </h1>
 <p>User input recieved for user <%= params[:un] %> </p>
 
-<%= @userArray %>
-
-<%=@readallfile%>
 
 <%= form_with url: "/user/confirmation", method: :post, local: true do |f| %>
 <%= f.text_field :un, id: :un, param_key: :un, :value => params[:un]%>
